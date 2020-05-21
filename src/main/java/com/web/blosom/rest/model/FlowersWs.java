@@ -1,31 +1,17 @@
 package com.web.blosom.rest.model;
 
-import org.springframework.web.multipart.MultipartFile;
-import org.springframework.web.multipart.commons.CommonsMultipartFile;
-
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
-
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-
-@ApiModel(description="Test Flower Model API description")
-@JsonPropertyOrder
 public class FlowersWs {
 	
 private String flowerId;
-	
+	 
 	private String flowerName;
 	
-	@ApiModelProperty(name="numberofflowers", notes="Hey its our model Parameter description")
 	private int noOfFlowers;
 	
 	private double costOfFlowers;
 	
 	private double discount;
 	
-	@JsonDeserialize(contentAs = CommonsMultipartFile.class)
-	private MultipartFile image;
 
 	public String getFlowerId() {
 		return flowerId;
@@ -67,12 +53,4 @@ private String flowerId;
 		this.discount = discount;
 	}
 
-	public MultipartFile getImage() {
-		return image;
-	}
-
-	public void setImage(MultipartFile image) {
-		this.image = image;
-	}
-	
 }
