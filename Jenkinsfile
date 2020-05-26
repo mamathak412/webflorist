@@ -48,8 +48,7 @@ pipeline {
                 sh 'mvn clean package sonar:sonar'
               }
             }
-        } */
-        
+        } 
         stage('Building image'){
         	 steps{
         script {
@@ -65,14 +64,15 @@ pipeline {
             dockerImage.push()
           }
         }
-      }
+      } 	
     }
     
     stage('Remove Unused docker image') {
       steps{
         sh "docker rmi $registry:$BUILD_NUMBER"
       }
-    }
+    }*/
+        
       
       
     }
