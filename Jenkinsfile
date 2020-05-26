@@ -7,7 +7,7 @@ pipeline {
   
   environment {
     registry = "mamathak412/webflorist1-latest"
-    registryCredential = 'dockerId'
+    registryCredential = 'dockerhub'
     dockerImage = ''
   }
   
