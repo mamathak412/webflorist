@@ -5,6 +5,11 @@ pipeline {
      jdk 'jdk8'
       }
   
+  environment {
+    registry = "mamathak412/webflorist-latest"
+    registryCredential = 'dockerId'
+    dockerImage = ''
+  }
   
     stages {
         
@@ -37,20 +42,38 @@ pipeline {
             }
         }
         
-          stage('Sonar integeration'){
+      /*    stage('Sonar integeration'){
             steps{
                     withSonarQubeEnv('jenkins_sonar') {
                 sh 'mvn clean package sonar:sonar'
               }
             }
+        } */
+        
+        stage('Building image'){
+        	 steps{
+        script {
+          dockerImage = docker.build registry + ":$BUILD_NUMBER"
+        }
+      }
         }
         
-        stage('Deploy'){
-            steps{
-                 configFileProvider([configFile(fileId: 'c363e7f8-6378-4df9-8229-d9b034af6a1d', variable: 'MAVEN_SETTINGS')]) {
-                sh 'mvn -s $MAVEN_SETTINGS spring-boot:run'
-            }
-            }
+         stage('Deploy Image') {
+      steps{
+        script {
+          docker.withRegistry( '', registryCredential ) {
+            dockerImage.push()
+          }
         }
+      }
+    }
+    
+    stage('Remove Unused docker image') {
+      steps{
+        sh "docker rmi $registry:$BUILD_NUMBER"
+      }
+    }
+      
+      
     }
 }
