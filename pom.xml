@@ -373,7 +373,7 @@
 					<version>3.0.0-M3</version>
 					<executions>
 						<execution>
-							<id>default-cli</id>
+							<id>enforce-java</id>
 							<goals>
 								<goal>enforce</goal>
 							</goals>
@@ -388,9 +388,6 @@
 										<message>Please consider using the maven-invoker-plugin
 											(http://maven.apache.org/plugins/maven-invoker-plugin/)!</message>
 									</bannedPlugins>
-									<requireMavenVersion>
-										<version>3.3.9</version>
-									</requireMavenVersion>
 									<requireJavaVersion>
 										<version>1.8</version>
 									</requireJavaVersion>
