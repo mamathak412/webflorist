@@ -62,7 +62,7 @@ pipeline {
          stage('Deploy Image') {
       steps{
         script {
-         withDockerContainer(image: mamathak412/webflorist1-latest:107, args: '-v /var/run/docker.sock:/var/run/docker.sock') {
+         withDockerContainer(image: 'mamathak412/webflorist1-latest:107', args: '-v /var/run/docker.sock:/var/run/docker.sock') {
 		 sh('Deploy image')
     }
         }
