@@ -1,7 +1,9 @@
 FROM openjdk:8-jre-alpine
 
 RUN mkdir /app
+ 
+RUN rm target/*original*.jar
 
 COPY target/*.jar /app/app.jar
 
-CMD java -cp /app/app.jar com.web.blosom.Application
+CMD java -jar /app/app.jar
