@@ -49,6 +49,8 @@ pipeline {
               }
             }
         } 
+        */
+        
         stage('Building image'){
         	 steps{
         script {
@@ -60,9 +62,9 @@ pipeline {
          stage('Deploy Image') {
       steps{
         script {
-          docker.withRegistry( 'https://hub.docker.com', registryCredential ) {
-            dockerImage.push()
-          }
+         withDockerContainer(image: dockerImage, args: '-v /var/run/docker.sock:/var/run/docker.sock') {
+		sh('Deploy image')
+    }
         }
       } 	
     }
@@ -71,7 +73,7 @@ pipeline {
       steps{
         sh "docker rmi $registry:$BUILD_NUMBER"
       }
-    }*/
+    }
         
       
       
