@@ -2,7 +2,7 @@ FROM openjdk:8-jre-alpine
 
 RUN mkdir /app
  
-RUN rm target/*original*.jar
+RUN rm target/original-*.jar
 
 COPY target/*.jar /app/app.jar
 
