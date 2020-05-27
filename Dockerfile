@@ -1,9 +1,7 @@
 FROM openjdk:8-jre-alpine
 
 RUN mkdir /app
- 
-RUN rm target/original-*.jar
 
-COPY target/*.jar /app/app.jar
+COPY target/WebFlorist-1.0.jar /app/app.jar
 
 CMD java -jar /app/app.jar
