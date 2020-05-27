@@ -62,8 +62,8 @@ pipeline {
          stage('Deploy Image') {
       steps{
         script {
-         withDockerContainer(image: env.dockerImage, args: '-v /var/run/docker.sock:/var/run/docker.sock') {
-		sh('Deploy image')
+         withDockerContainer(image: $(env.dockerImage), args: '-v /var/run/docker.sock:/var/run/docker.sock') {
+		 sh('Deploy image')
     }
         }
       } 	
