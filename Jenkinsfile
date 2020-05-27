@@ -34,7 +34,7 @@ pipeline {
             }
         }
         
-        stage('Test'){
+       /*    stage('Test'){
             steps{
               configFileProvider([configFile(fileId: 'c363e7f8-6378-4df9-8229-d9b034af6a1d', variable: 'MAVEN_SETTINGS')]) {
                     sh 'mvn -s $MAVEN_SETTINGS test'
@@ -42,27 +42,27 @@ pipeline {
             }
         }
         
-      /*    stage('Sonar integeration'){
+       stage('Sonar integeration'){
             steps{
                     withSonarQubeEnv('jenkins_sonar') {
                 sh 'mvn clean package sonar:sonar'
               }
             }
         } 
-        */
-        
+       
         stage('Building image'){
         	 steps{
         script {
           dockerImage = docker.build registry + ":$BUILD_NUMBER"
         }
       }
-        }
+        } */
+        
         
          stage('Deploy Image') {
       steps{
         script {
-         withDockerContainer(image: dockerImage + ":$BUILD_NUMBER" , args: '-v /var/run/docker.sock:/var/run/docker.sock') {
+         withDockerContainer(image: mamathak412/webflorist1-latest:107, args: '-v /var/run/docker.sock:/var/run/docker.sock') {
 		 sh('Deploy image')
     }
         }
