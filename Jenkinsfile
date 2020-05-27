@@ -62,7 +62,7 @@ pipeline {
          stage('Deploy Image') {
       steps{
         script {
-         withDockerContainer(image: env.dockerImage + ":$BUILD_NUMBER" , args: '-v /var/run/docker.sock:/var/run/docker.sock') {
+         withDockerContainer(image: dockerImage + ":$BUILD_NUMBER" , args: '-v /var/run/docker.sock:/var/run/docker.sock') {
 		 sh('Deploy image')
     }
         }
