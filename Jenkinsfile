@@ -6,7 +6,7 @@ pipeline {
       }
   
   environment {
-    registry = "mamathak412/webflorist1-latest"
+    registry = "mkrish04/webflorist"
     registryCredential = 'dockerhub'
     dockerImage = ''
   }
@@ -34,7 +34,7 @@ pipeline {
             }
         }
         
-       /*    stage('Test'){
+     stage('Test'){
             steps{
               configFileProvider([configFile(fileId: 'c363e7f8-6378-4df9-8229-d9b034af6a1d', variable: 'MAVEN_SETTINGS')]) {
                     sh 'mvn -s $MAVEN_SETTINGS test'
@@ -56,13 +56,13 @@ pipeline {
           dockerImage = docker.build registry + ":$BUILD_NUMBER"
         }
       }
-        } */
+        } 
         
         
          stage('Deploy Image') {
       steps{
         script {
-         withDockerContainer(image: 'mamathak412/webflorist1-latest:107', args: '-v /var/run/docker.sock:/var/run/docker.sock') {
+         withDockerContainer(image: $registry:$BUILD_NUMBER, args: '-p 9001:9001 -d -v /var/run/docker.sock:/var/run/docker.sock') {
 		 sh('Deploy image')
     }
         }
