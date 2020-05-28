@@ -62,7 +62,8 @@ pipeline {
          stage('Deploy Image') {
       steps{
         script {
-         withDockerContainer(image: 'mkrish04/webflorist:113', args: '-p 9001:9001 -d -v /var/run/docker.sock:/var/run/docker.sock') {
+         withDockerContainer(image: 'mkrish04/webflorist:114', args: '-p 9001:9001 -d -v  /var/lib/docker/volumes/jenkins-data_myvolume/_data:/var/jenkins_home
+') {
 		 sh('Deploy image')
     }
         }
