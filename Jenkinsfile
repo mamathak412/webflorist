@@ -42,13 +42,13 @@ pipeline {
             }
         }
         
-       stage('Sonar integeration'){
+    /*   stage('Sonar integeration'){
             steps{
                     withSonarQubeEnv('jenkins_sonar') {
                 sh 'mvn clean package sonar:sonar'
               }
             }
-        } 
+        } */
        
         stage('Building image'){
         	 steps{
