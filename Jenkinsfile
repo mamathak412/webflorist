@@ -62,7 +62,7 @@ pipeline {
          stage('Deploy Image') {
       steps{
         script {
-         withDockerContainer(image: $registry:$BUILD_NUMBER, args: '-p 9001:9001 -d -v /var/run/docker.sock:/var/run/docker.sock') {
+         withDockerContainer(image: 'mkrish04/webflorist:111', args: '-p 9001:9001 -d -v /var/run/docker.sock:/var/run/docker.sock') {
 		 sh('Deploy image')
     }
         }
