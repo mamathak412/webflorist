@@ -9,4 +9,4 @@ CREATE table Flowers(
 	image MEDIUMBLOB 
 );
 
-Select * from FLOWERS;
+Select * from Flowers;
