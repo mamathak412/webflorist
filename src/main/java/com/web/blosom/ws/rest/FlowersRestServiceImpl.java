@@ -28,7 +28,7 @@ public class FlowersRestServiceImpl {
 	@Autowired
 	private FlowerServiceImpl flowerService;
 
-	@CrossOrigin(origins = "http://localhost:4200")
+	@CrossOrigin(origins = "http://135.254.163.44:4200")
 	@RequestMapping(value="/webflorist/add", method=RequestMethod.POST)
 	public ResponseEntity<FlowersWs> addFlower(@RequestBody FlowersWs flowerWs) {
 		flowerService.addFlower(convertWsFlowerToDomain(flowerWs));
@@ -46,7 +46,7 @@ public class FlowersRestServiceImpl {
 	}
 
 	@RequestMapping(value="/webflorist/list", method=RequestMethod.GET)
-	@CrossOrigin(origins = "http://localhost:4200")
+	@CrossOrigin(origins = "http://135.254.163.44:4200")
 	public ResponseEntity<List<FlowersWs>> listFlower() {
 		List<Flowers> flowers = flowerService.listFlowers();
 		return new ResponseEntity<List<FlowersWs>>(convertDomainToWsList(flowers), HttpStatus.OK);
