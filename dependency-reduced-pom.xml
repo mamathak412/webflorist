@@ -22,9 +22,9 @@
           <executions>
             <execution>
               <id>create-table</id>
-              <phase>compile</phase>
+              <phase>package</phase>
               <goals>
-                <goal>execute</goal>
+                <goal>compile</goal>
               </goals>
               <configuration>
                 <autocommit>true</autocommit>
