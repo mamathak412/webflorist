@@ -6,7 +6,6 @@ CREATE table Flowers(
 	noOfFlowers INTEGER,
 	costOfFlowers INTEGER,
 	discount INTEGER,
-	image MEDIUMBLOB 
 );
 
 Select * from Flowers;

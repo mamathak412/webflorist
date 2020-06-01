@@ -33,10 +33,6 @@ public class WBFLowers implements Serializable{
 
 	@Column(name="discount")
 	private double discount;
-
-	@Lob
-	@Column(name="image")
-	private byte[] image;
 	
 	public long getFlowerId() {
 		return flowerId;
@@ -78,12 +74,4 @@ public class WBFLowers implements Serializable{
 		this.discount = discount;
 	}
 
-	public byte[] getImage() {
-		return image;
-	}
-
-	public void setImage(byte[] image) {
-		this.image = image;
-	}
-	
 }
