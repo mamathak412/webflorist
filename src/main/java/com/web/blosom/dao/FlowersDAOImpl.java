@@ -52,21 +52,6 @@ public class FlowersDAOImpl {
 		wbFlowers.setDiscount(flowers.getDiscount());
 		wbFlowers.setFlowerName(flowers.getFlowerName());
 		wbFlowers.setNoOfFlowers(flowers.getNoOfFlowers());
-
-		if (flowers.getImagePath() != null) {
-			File file = new File(flowers.getImagePath().getOriginalFilename());
-			if (file.exists()) {
-				byte[] bFile = new byte[(int) file.length()];
-				try {
-					FileInputStream inputStream = new FileInputStream(file);
-					inputStream.read(bFile);
-					inputStream.close();
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-				wbFlowers.setImage(bFile);
-			}
-		}
 		return wbFlowers;
 	}
 
