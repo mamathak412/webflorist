@@ -23,7 +23,7 @@ public class FlowersDAOImpl {
 
 	@Transactional
 	public List<Flowers> listFlower() {
-		List<Flowers> wbFlowers = entityManager.createQuery("Select d from FLOWERS d", Flowers.class)
+		List<Flowers> wbFlowers = entityManager.createQuery("Select f from Flowers f", Flowers.class)
 				.getResultList();
 		return wbFlowers;
 	}

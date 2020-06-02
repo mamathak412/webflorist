@@ -1,6 +1,6 @@
-DROP TABLE IF EXISTS FLOWERS;
+DROP TABLE IF EXISTS Flowers;
 
-CREATE TABLE FLOWERS (
+CREATE TABLE Flowers (
   flowerId INTEGER AUTO_INCREMENT  PRIMARY KEY,
   flowerName VARCHAR(30),
   noOfFlowers INTEGER,
@@ -8,4 +8,4 @@ CREATE TABLE FLOWERS (
   discount INTEGER
 );
 
-Select * from FLOWERS;
+Select * from Flowers;
