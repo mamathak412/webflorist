@@ -12,7 +12,7 @@ public class Customer {
 	
 	private String phoneNumber;
 	
-	private List<Flowers> flowers;
+	private List<DFlowers> flowers;
 	
 	private String senderAddress;
 	
@@ -52,11 +52,11 @@ public class Customer {
 		this.phoneNumber = phoneNumber;
 	}
 
-	public List<Flowers> getFlowers() {
+	public List<DFlowers> getFlowers() {
 		return flowers;
 	}
 
-	public void setFlowers(List<Flowers> flowers) {
+	public void setFlowers(List<DFlowers> flowers) {
 		this.flowers = flowers;
 	}
 

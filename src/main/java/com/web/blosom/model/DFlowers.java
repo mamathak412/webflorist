@@ -1,44 +1,25 @@
-package com.web.blosom.entity;
+package src.main.java.com.web.blosom.model;
 
-import java.io.Serializable;
+import org.springframework.web.multipart.MultipartFile;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Lob;
-import javax.persistence.Table;
-
-@Entity
-@Table(name="FLOWERS")
-public class WBFLowers implements Serializable{
-
-
-	private static final long serialVersionUID = 1L;
-
-	@Id
-	@Column(name="flowerId")
-	@GeneratedValue(strategy= GenerationType.TABLE)
-	private long flowerId;
-
-	@Column(name="flowerName")
+public class DFlowers {
+	
+	private String flowerId;
+	
 	private String flowerName;
-
-	@Column(name="noOfFlowers")
+	
 	private int noOfFlowers;
-
-	@Column(name="costOfFlowers")
+	
 	private double costOfFlowers;
-
-	@Column(name="discount")
+	
 	private double discount;
 	
-	public long getFlowerId() {
+
+	public String getFlowerId() {
 		return flowerId;
 	}
 
-	public void setFlowerId(long flowerId) {
+	public void setFlowerId(String flowerId) {
 		this.flowerId = flowerId;
 	}
 

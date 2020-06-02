@@ -21,22 +21,22 @@ public class FlowersDAOImpl {
 	private EntityManager entityManager;
 
 	@Transactional
-	public void saveFlower(Flowers flowers) {
+	public void saveFlower(DFlowers flowers) {
 		entityManager.persist(convertFlowerDomainToEntityModel(flowers));
 	}
 
 	@Transactional
-	public List<Flowers> listFlower() {
-		List<WBFLowers> wbFlowers = entityManager.createQuery("Select d from WBFLowers d", WBFLowers.class)
+	public List<DFlowers> listFlower() {
+		List<FLowers> wbFlowers = entityManager.createQuery("Select d from FLOWERS d", FLowers.class)
 				.getResultList();
 		return convertEntityToDomain(wbFlowers);
 	}
 
-	private List<Flowers> convertEntityToDomain(List<WBFLowers> wbFlowers) {
-		List<Flowers> flowers = new ArrayList<Flowers>();
+	private List<DFlowers> convertEntityToDomain(List<FLowers> wbFlowers) {
+		List<DFlowers> flowers = new ArrayList<DFlowers>();
 
-		for (WBFLowers wbFlower : wbFlowers) {
-			Flowers flower = new Flowers();
+		for (FLowers wbFlower : wbFlowers) {
+			DFlowers flower = new DFlowers();
 			flower.setCostOfFlowers(wbFlower.getCostOfFlowers());
 			flower.setDiscount(wbFlower.getDiscount());
 			flower.setFlowerName(wbFlower.getFlowerName());
@@ -46,8 +46,8 @@ public class FlowersDAOImpl {
 		return flowers;
 	}
 
-	private WBFLowers convertFlowerDomainToEntityModel(Flowers flowers) {
-		WBFLowers wbFlowers = new WBFLowers();
+	private FLowers convertFlowerDomainToEntityModel(DFlowers flowers) {
+		FLowers wbFlowers = new FLowers();
 		wbFlowers.setCostOfFlowers(flowers.getCostOfFlowers());
 		wbFlowers.setDiscount(flowers.getDiscount());
 		wbFlowers.setFlowerName(flowers.getFlowerName());
