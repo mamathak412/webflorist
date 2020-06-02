@@ -1,6 +1,5 @@
 package com.web.blosom.service;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.slf4j.Logger;
@@ -27,12 +26,26 @@ public class FlowerServiceImpl {
 	
 	public List<Flowers> listFlowers(){
 		List<Flowers> flowers = flowersRepository.findAll();
-        
+		logger.info("Flowers in service " + flowers);
         if(flowers.size() > 0) {
         	logger.info("Flower listed " + flowers);
             return flowers;
         } else {
-            return new ArrayList<Flowers>();
+        	Flowers flower1 = new Flowers();
+        	flower1.setFlowerId(1);
+        	flower1.setFlowerName("Rose");
+        	flower1.setCostOfFlowers(10);
+        	flower1.setDiscount(2.0);
+        	
+        	Flowers flower2 = new Flowers();
+        	flower2.setFlowerId(2);
+        	flower2.setFlowerName("Lilly");
+        	flower1.setCostOfFlowers(15);
+        	flower1.setDiscount(1.5);
+        	
+        	flowers.add(flower1);
+        	flowers.add(flower2);
+            return flowers;
         }
 	}
 }
