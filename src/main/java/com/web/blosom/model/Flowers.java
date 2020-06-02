@@ -4,28 +4,30 @@ import java.io.Serializable;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity 
-@Table
+@Table(name="FLOWERS")
 public class Flowers implements Serializable{
 
 	private static final long serialVersionUID = 1L;
 
 	@Id  
+	@GeneratedValue
 	private long flowerId;
 
-	@Column  
+	@Column(name="flowerName") 
 	private String flowerName;
 
-	@Column  
+	@Column(name="flowerName")   
 	private int noOfFlowers;
 
-	@Column  
+	@Column(name="costOfFlowers")   
 	private double costOfFlowers;
 
-	@Column  
+	@Column(name="discount") 
 	private double discount;
 	
 	public long getFlowerId() {

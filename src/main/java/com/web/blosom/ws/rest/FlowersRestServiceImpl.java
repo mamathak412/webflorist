@@ -7,6 +7,8 @@ import javax.ws.rs.Consumes;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -24,6 +26,8 @@ import com.web.blosom.service.FlowerServiceImpl;
 @Produces(MediaType.APPLICATION_JSON)
 @RestController
 public class FlowersRestServiceImpl {
+	
+	private Logger logger = LoggerFactory.getLogger(FlowersRestServiceImpl.class);
 
 	@Autowired
 	private FlowerServiceImpl flowerService;
@@ -54,7 +58,7 @@ public class FlowersRestServiceImpl {
 
 	private List<FlowersWs> convertDomainToWsList(List<Flowers> flowers) {
 		List<FlowersWs> flowersWs = new ArrayList<FlowersWs>();
-
+		logger.info("Rest controller layer " + flowers);
 		for (Flowers flower : flowers) {
 			FlowersWs wsflower = new FlowersWs();
 			wsflower.setCostOfFlowers(flower.getCostOfFlowers());
