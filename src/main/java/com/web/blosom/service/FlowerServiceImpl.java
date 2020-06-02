@@ -40,8 +40,8 @@ public class FlowerServiceImpl {
         	Flowers flower2 = new Flowers();
         	flower2.setFlowerId(2);
         	flower2.setFlowerName("Lilly");
-        	flower1.setCostOfFlowers(15);
-        	flower1.setDiscount(1.5);
+        	flower2.setCostOfFlowers(15);
+        	flower2.setDiscount(1.5);
         	
         	flowers.add(flower1);
         	flowers.add(flower2);
