@@ -14,7 +14,6 @@ public class Flowers {
 	
 	private double discount;
 	
-	private MultipartFile imagePath;
 
 	public String getFlowerId() {
 		return flowerId;
@@ -54,14 +53,6 @@ public class Flowers {
 
 	public void setDiscount(double discount) {
 		this.discount = discount;
-	}
-
-	public MultipartFile getImagePath() {
-		return imagePath;
-	}
-
-	public void setImagePath(MultipartFile imagePath) {
-		this.imagePath = imagePath;
 	}
 
 }

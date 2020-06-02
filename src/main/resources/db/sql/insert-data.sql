@@ -1,7 +1,8 @@
-INSERT INTO Flowers (flowerId, flowerName, noOfFlowers, costOfFlowers, discount)
-VALUES ('1', 'Rose', '2', '10', '5');
+INSERT INTO FLOWERS (flowerName, noOfFlowers, costOfFlowers, discount)
+VALUES ('Rose', 2, 10, 5);
 
-INSERT INTO Flowers (flowerId, flowerName, noOfFlowers, costOfFlowers, discount)
-VALUES ('2', 'Lilly', '2', '10', '5');
+INSERT INTO FLOWERS (flowerName, noOfFlowers, costOfFlowers, discount)
+VALUES ('Lilly', 2, 10, 5);
 
-Select * from Flowers;
+Select * from FLOWERS;
+

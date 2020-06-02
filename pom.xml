@@ -215,8 +215,6 @@
 		<pluginManagement>
 			<plugins>
 
-				
-
 				<plugin>
 					<!-- Build an executable JAR -->
 					<groupId>org.apache.maven.plugins</groupId>
@@ -358,8 +356,8 @@
 			</plugins>
 		</pluginManagement>
 
-		<plugins>
-			<plugin>
+		 <plugins>
+		<!--	<plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>flatten-maven-plugin</artifactId>
 				<version>1.2.1</version>
@@ -383,7 +381,7 @@
 						</goals>
 					</execution>
 				</executions>
-			</plugin>
+			</plugin> -->
 
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
@@ -400,7 +398,7 @@
 				<version>3.0.0-M1</version>
 			</plugin>
 
-			 <plugin>
+			 <!-- <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-shade-plugin</artifactId>
             <executions>
@@ -433,7 +431,7 @@
                     </configuration>
                 </execution>
             </executions>
-        </plugin>
+        </plugin> -->
         
         <plugin>
 					<groupId>org.codehaus.mojo</groupId>
@@ -449,7 +447,7 @@
 					</dependencies>
 					<configuration>
 						<driver>org.h2.Driver</driver>
-						<url>jdbc:h2:mem:~/webdb</url>
+						<url>jdbc:h2:mem:testdb</url>
 						<username>sa</username>
 						<password></password>
 						<!-- <skip>${maven.test.skip}</skip> -->

@@ -11,7 +11,7 @@ import javax.persistence.Lob;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="Flowers")
+@Table(name="FLOWERS")
 public class WBFLowers implements Serializable{
 
 
