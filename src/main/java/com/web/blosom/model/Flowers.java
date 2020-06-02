@@ -21,7 +21,7 @@ public class Flowers implements Serializable{
 	@Column(name="flowerName") 
 	private String flowerName;
 
-	@Column(name="flowerName")   
+	@Column(name="noOfFlowers")   
 	private int noOfFlowers;
 
 	@Column(name="costOfFlowers")   
