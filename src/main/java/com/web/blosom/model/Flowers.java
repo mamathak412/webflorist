@@ -1,25 +1,34 @@
-package src.main.java.com.web.blosom.model;
+package com.web.blosom.model;
 
-import org.springframework.web.multipart.MultipartFile;
+import java.io.Serializable;
 
-public class DFlowers {
-	
-	private String flowerId;
-	
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Lob;
+import javax.persistence.Table;
+
+public class Flowers implements Serializable{
+
+	private static final long serialVersionUID = 1L;
+
+	private long flowerId;
+
 	private String flowerName;
-	
+
 	private int noOfFlowers;
-	
+
 	private double costOfFlowers;
-	
+
 	private double discount;
 	
-
-	public String getFlowerId() {
+	public long getFlowerId() {
 		return flowerId;
 	}
 
-	public void setFlowerId(String flowerId) {
+	public void setFlowerId(long flowerId) {
 		this.flowerId = flowerId;
 	}
 

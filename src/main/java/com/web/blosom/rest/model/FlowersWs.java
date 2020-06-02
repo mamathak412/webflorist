@@ -2,7 +2,7 @@ package com.web.blosom.rest.model;
 
 public class FlowersWs {
 	
-private String flowerId;
+private long flowerId;
 	 
 	private String flowerName;
 	
@@ -13,11 +13,11 @@ private String flowerId;
 	private double discount;
 	
 
-	public String getFlowerId() {
+	public long getFlowerId() {
 		return flowerId;
 	}
 
-	public void setFlowerId(String flowerId) {
+	public void setFlowerId(long flowerId) {
 		this.flowerId = flowerId;
 	}
 
